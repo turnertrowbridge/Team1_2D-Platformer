@@ -3,11 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] Transform groundCheckCollider;
-    [SerializeField] LayerMask groundLayer;
+    //[SerializeField] Transform groundCheckCollider;
+    //[SerializeField] LayerMask groundLayer;
 
 
-    const float groundCheckRadius = 0.2f;
+    //const float groundCheckRadius = 0.2f;
     private bool moving = false;
 
     private bool doubleJump; 
@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpCount = 0;
 
     private float jumpAmount = 10;
-    private float gravityScale = 1;
-    private float fallingGravityScale = 1.75f;
+    private float gravityScale = 0.75f;
+    private float fallingGravityScale = 1.00f;
 
     void Start()
     {
@@ -71,17 +71,17 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private bool IsGrounded()
-    {
-        isGrounded = false;
-        //Check if the GroundCheckObject is colliding wiht other
-        //2D Colliders that are in the "Ground" layer
-        //If yes (isGrounded = true), if no (isGrounded = false)
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer);
-        if(colliders.Length > 0)
-        {
-            isGrounded = true;
-        }
-        return isGrounded;
-    }
-}
+//     private bool IsGrounded()
+//     {
+//         isGrounded = false;
+//         //Check if the GroundCheckObject is colliding wiht other
+//         //2D Colliders that are in the "Ground" layer
+//         //If yes (isGrounded = true), if no (isGrounded = false)
+//         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer);
+//         if(colliders.Length > 0)
+//         {
+//             isGrounded = true;
+//         }
+//         return isGrounded;
+//     }
+ }
