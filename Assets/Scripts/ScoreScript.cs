@@ -8,8 +8,9 @@ public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI MyscoreText;
 
-    private ScoreNum;
+    private int ScoreNum;
 
+    private ScoreNum;
 
     // Start is called before the first frame update
     void Start()
