@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8845df4a-f261-4b45-abb3-f9f0d837f75c}">
+		<property name="assetPath">
+			<value>group 1 squirrel.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>88.685714285714283</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5c606a37-c210-4f97-a8d7-ffe8800e05b4}</destination>
+		</relationship>
+	</object>
+</objects>
