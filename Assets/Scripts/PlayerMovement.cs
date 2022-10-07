@@ -18,8 +18,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float glidingSpeed;
     private float initialGravityScale;
 
+
     private void Awake()
     {
+        
+
         // Grab references for rigidbody and animator for object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -31,8 +34,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
+
         // Left-Right Movement
         float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
 
@@ -40,9 +48,11 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalInput > 0.01f)
         {
             transform.localScale = Vector3.one;
-        } else if (horizontalInput < -0.01f)
+        }
+        else if (horizontalInput < -0.01f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+
         }
 
 
@@ -62,12 +72,11 @@ public class PlayerMovement : MonoBehaviour
         // Gliding movement
 
         // Check if in air and moving downwards
-        if (Input.GetKey(KeyCode.Space) &&          
+        if (Input.GetKey(KeyCode.Space) || (Input.GetKey(KeyCode.LeftShift)) &&          
             (body.velocity.y <= 0) && !isGrounded())
 
         //remove gravity and change velocity to descend at -glidingSpeed
         {
-
             body.gravityScale = 0;
             body.velocity = new Vector2(body.velocity.x, -glidingSpeed);
         }

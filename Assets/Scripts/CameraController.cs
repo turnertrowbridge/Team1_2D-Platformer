@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
 
    [SerializeField] private Transform player;
-    [SerializeField] private int yCameraPosition;
+    [SerializeField] private float yCameraPosition;
 
     private void Update()
     {
