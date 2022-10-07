@@ -40,6 +40,39 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background 4
+    uniqueID: 2216072173
+    locked: 0
+  - name: Background 3
+    uniqueID: 2412854017
+    locked: 0
+  - name: Background 2
+    uniqueID: 3137623747
+    locked: 0
+  - name: Background 1
+    uniqueID: 579472299
+    locked: 0
+  - name: Background
+    uniqueID: 1822192195
+    locked: 0
+  - name: Background -1
+    uniqueID: 2801739369
+    locked: 0
+  - name: Baground -2
+    uniqueID: 3792921571
+    locked: 0
+  - name: Background -3
+    uniqueID: 2294842831
+    locked: 0
+  - name: Background -4
+    uniqueID: 550383961
+    locked: 0
+  - name: Background -5
+    uniqueID: 1606986661
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2658130497
     locked: 0
