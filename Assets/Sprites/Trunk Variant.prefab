@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2171333038714495978, guid: dc1a7f6b566ac4d0cbf56b0d18b3fccf, type: 3}
       propertyPath: m_Name
-      value: Trunk (1)
+      value: Trunk Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4277137181148332007, guid: dc1a7f6b566ac4d0cbf56b0d18b3fccf, type: 3}
       propertyPath: m_Sprite
@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5168696909945323088, guid: dc1a7f6b566ac4d0cbf56b0d18b3fccf, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 6e11cdfcc2fd241e191e3e836f90acf9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc1a7f6b566ac4d0cbf56b0d18b3fccf, type: 3}
