@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float glidingSpeed;
     private float initialGravityScale;
 
+    [SerializeField] private bool _useWalkSound;
+
 
 
     private void Awake()
@@ -46,15 +48,15 @@ public class PlayerMovement : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
-        /* Attempted  walk sound
+        //Attempted  walk sound
 
-        if (isGrounded() && horizontalInput != 0)
+        if (isGrounded() && horizontalInput != 0 && _useWalkSound)
         {
             instance = FMODUnity.RuntimeManager.CreateInstance("event:/Walk");
             instance.start();
             instance.release();
         }
-        */
+        
 
 
         // Flip player movement when moving left-right
