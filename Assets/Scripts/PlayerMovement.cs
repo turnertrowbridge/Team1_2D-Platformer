@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
+    private FMOD.Studio.EventInstance instance;
 
     private Rigidbody2D body;
     private Animator anim;
@@ -18,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float glidingSpeed;
     private float initialGravityScale;
 
+    [SerializeField] private bool _useWalkSound;
+
+
 
     private void Awake()
     {
+
         
 
         // Grab references for rigidbody and animator for object
@@ -42,6 +47,16 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+
+        //Attempted  walk sound
+
+        if (isGrounded() && horizontalInput != 0 && _useWalkSound)
+        {
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/Walk");
+            instance.start();
+            instance.release();
+        }
+        
 
 
         // Flip player movement when moving left-right
@@ -86,6 +101,22 @@ public class PlayerMovement : MonoBehaviour
             body.gravityScale = initialGravityScale;
         }
 
+        // Gliding Sound
+        if (Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.LeftShift)) &&
+            (body.velocity.y <= 0) && !isGrounded())
+        {
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/Chute");
+            instance.start();
+            instance.release();
+        }
+
+        if ((body.velocity.y <= 0) && !isGrounded())
+        {
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/FallAndLand");
+            instance.start();
+            instance.release();
+        }
+
 
         // Set animator parameters
         anim.SetBool("run", horizontalInput != 0);
@@ -99,12 +130,18 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, speed);
             anim.SetTrigger("jump");
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/Jump");
+            instance.start();
+            instance.release();
         }
         else if (!isGrounded() && jumpCount < 1)
         {
             body.velocity = new Vector2(body.velocity.x, speed);
             anim.SetTrigger("jump");
             jumpCount++;
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/Jump");
+            instance.start();
+            instance.release();
         }
      
     }
