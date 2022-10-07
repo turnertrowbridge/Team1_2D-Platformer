@@ -7,7 +7,9 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI MyscoreText;
-    private int ScoreNum;
+
+    private ScoreNum;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +27,6 @@ public class ScoreScript : MonoBehaviour
             MyscoreText.text = "Score: " + ScoreNum;
         }
     }
+
 
 }
