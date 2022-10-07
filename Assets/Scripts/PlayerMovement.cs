@@ -19,8 +19,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float glidingSpeed;
     private float initialGravityScale;
 
-    [SerializeField] private bool _useWalkSound;
-
 
 
     private void Awake()
@@ -50,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Attempted  walk sound
 
-        if (isGrounded() && horizontalInput != 0 && _useWalkSound)
+        if (isGrounded() && horizontalInput != 0)
         {
             instance = FMODUnity.RuntimeManager.CreateInstance("event:/Walk");
             instance.start();
@@ -109,14 +107,6 @@ public class PlayerMovement : MonoBehaviour
             instance.start();
             instance.release();
         }
-
-        if ((body.velocity.y <= 0) && !isGrounded())
-        {
-            instance = FMODUnity.RuntimeManager.CreateInstance("event:/FallAndLand");
-            instance.start();
-            instance.release();
-        }
-
 
         // Set animator parameters
         anim.SetBool("run", horizontalInput != 0);

@@ -7,7 +7,13 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI MyscoreText;
+<<<<<<< Updated upstream
     private int ScoreNum;
+=======
+
+    private int ScoreNum;
+
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
