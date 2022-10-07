@@ -4,6 +4,7 @@ created September/October Fall 2022
 
 Members:
 Lucio Beltran,
+Brendan Julian,
 Victoria Felisa Majam,
 Sebastian Ibarra-Perez,
 Manny Jones-Pacheco,
